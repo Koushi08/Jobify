@@ -1,0 +1,208 @@
+/* Reset default body margin and padding */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Root Variables */
+:root {
+    --header-bg-color: #2C3E50;
+    --button-bg-color: #3498DB;
+    --button-hover-color: #2980B9;
+    --button-text-color: white;
+    --profile-icon-bg: #E67E22;
+    --gradient-bg: linear-gradient(135deg, #D1C4E9, #C5A3FF);
+}
+
+/* Full Page Background */
+.dashboard-container {
+    font-family: 'Arial', sans-serif;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+
+/* Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 15px 30px;
+    background: var(--header-bg-color);
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+/* Header Content Layout */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+/* Project Name */
+.project-name {
+    font-weight: bold;
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* Right Section: User Info and Navigation */
+.user-info-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between "Hello" and username */
+    margin-left: auto;
+    color: white;
+}
+
+.user-info {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: white;
+}
+
+/* Navigation Buttons */
+.nav-options {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.nav-options button {
+    padding: 8px 16px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-options button:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.05);
+}
+
+/* Profile Icon */
+.profile-settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: var(--profile-icon-bg);
+    color: white;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.profile-settings:hover {
+    transform: scale(1.1);
+}
+
+/* Dropdown Menu */
+.profile-menu {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: white;
+    border-radius: 8px;
+    width: 150px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 10px;
+    z-index: 100;
+}
+
+.profile-menu.visible {
+    display: block;
+}
+
+.profile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-menu ul li {
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-menu ul li:hover {
+    background-color: #f0f0f0;
+    color: var(--button-bg-color);
+}
+
+/* Centered Message (blended look) */
+.centered-message {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    margin-top: 150px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-name {
+        margin-bottom: 10px;
+    }
+
+    .nav-options {
+        gap: 10px;
+    }
+
+    .profile-settings {
+        width: 30px;
+        height: 30px;
+    }
+
+    .centered-message {
+        width: 90%;
+        font-size: 1rem;
+        margin-top: 120px;
+    }
+}
